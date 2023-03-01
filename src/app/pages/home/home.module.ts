@@ -17,7 +17,7 @@ import { CompanyProfileComponent } from './company-profile/company-profile.compo
     FooterComponent,
     IndexComponent,
     CompaniesComponent,
-    CompanyProfileComponent
+    CompanyProfileComponent,
   ],
   imports: [
     CommonModule,
