@@ -23,31 +23,31 @@ export const HEADER_MENU = [
     ]
   },
   {
-    name: "Projects",
-    path: "/#",
+    name: "Activities",
+    path: "/activities",
     icon: "/assets/images/icons/icon3.png",
     collapse: true,
     children: []
   },
   {
     name: "Profile",
-    path: "/#",
+    path: "/profile/",
     icon: "/assets/images/icons/icon4.png",
     collapse: true,
     children: [
       {
         name: "User Profile",
-        path: "/#",
+        path: "/profile/all",
       },
       {
         name: "My Profile Feed",
-        path: "/#",
+        path: "/profile/feed",
       },
     ]
   },
   {
     name: "Jobs",
-    path: "/#",
+    path: "/jobs",
     icon: "/assets/images/icons/icon5.png",
     collapse: true,
     children: []

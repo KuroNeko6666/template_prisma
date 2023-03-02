@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ACTIVITY_DUMP } from 'src/app/data/dump/post.dump';
+import { ACTIVITY_DUMP } from 'src/app/data/dump/post-activity.dump';
+import { USER_PROFILES } from 'src/app/data/dump/user-profiles.dump';
 
 @Component({
   selector: 'app-index',
@@ -7,5 +8,6 @@ import { ACTIVITY_DUMP } from 'src/app/data/dump/post.dump';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent {
-  activity = ACTIVITY_DUMP
+  posts = ACTIVITY_DUMP
+  userProfiles = USER_PROFILES
 }

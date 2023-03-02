@@ -1,0 +1,104 @@
+<div class="bg-white shadow rounded px-5 py-5 h-fit flex flex-col gap-3">
+
+  <div class="flex flex-row gap-3" *ngIf="data?.name">
+    <span class=""><img src="/assets/images/resources/user.png" alt="" class="rounded h-12"></span>
+    <span class="flex flex-col">
+      <span class="font-bold text-slate-800">{{ data!.name }}</span>
+      <span class="font-bold text-sm text-slate-400"><i class="fa-solid fa-clock"></i> 2 min ago</span>
+    </span>
+    <div class="flex-1 flex flex-row gap-2 justify-end font-bold text-xl">
+      <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
+    </div>
+  </div>
+
+  <div class="flex flex-row gap-3">
+    <div class="flex-row gap-2 text-xs my-auto"  *ngIf="data?.post_type">
+      <i class="fa-solid fa-table-list text-blue-500"></i>
+      <span class="text-slate-400 ml-1">{{ data?.post_type | titlecase}}</span>
+    </div>
+    <div class="flex-row gap-2 text-xs my-auto"  *ngIf="data?.post_type">
+      <i class="fa-solid fa-location-dot text-green-500"></i>
+      <span class="text-slate-400 ml-1">Location</span>
+    </div>
+    <div class="flex-1 flex flex-row gap-2 justify-end text-sm font-bold">
+      <button class="bg-green-500 hover:bg-green-600 px-4 rounded text-slate-100 py-2">
+        <i class="fa-solid fa-bookmark"></i>
+      </button>
+      <button class="bg-red-500 hover:bg-red-600 px-4 rounded text-slate-100 py-2">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+      <button class="bg-blue-500 hover:bg-blue-600 px-4 rounded text-slate-100 py-2" *ngIf="data?.post_type == 'job'">
+        <span>Bid</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="font-bold" *ngIf="data?.title">{{ data?.title | titlecase}}</div>
+
+  <div class="flex flex-row gap-2 text-xs font-bold" *ngIf="data?.job_type && data?.payment && data?.payment_time">
+    <div class="bg-blue-500 px-2 rounded text-slate-100 py-1 ">
+      {{ data?.job_type }}
+    </div>
+    <span>{{ data?.payment }} / {{ data?.payment_time }}</span>
+  </div>
+  <div class="w-full min-w-full overflow-x-scroll flex flex-row" *ngIf="data?.images">
+    <ng-container *ngFor="let image of data!.images">
+      <div class="min-w-full lg:min-w-[50%]">
+        <img [src]="image" alt="">
+      </div>
+    </ng-container>
+  </div>
+  <div class="text-sm text-slate-600" *ngIf="data?.caption && !viewMore">
+    {{ data!.caption | slice:0:150}}
+    <span *ngIf="data?.caption!.length >= 100">
+      ...
+      <button class="text-red-500 hover:text-red-600 text-sm font-bold" (click)="viewMoreToggle()">View More</button>
+    </span>
+  </div>
+  <div class="text-sm text-slate-600" *ngIf="data?.caption && viewMore">
+    {{ data!.caption}}
+    <span *ngIf="data?.caption!.length >= 100">
+      <button class="text-red-500 hover:text-red-600 text-sm font-bold" (click)="viewMoreToggle()"> View Less</button>
+    </span>
+  </div>
+  <div class="flex flex-row gap-2">
+    <ng-container *ngFor="let item of data?.category">
+      <div class="bg-slate-100 text-slate-400 rounded-full py-2 px-3 text-xs">{{ item }}</div>
+    </ng-container>
+  </div>
+  <hr>
+  <div class="flex flex-row gap-4">
+    <div class="flex flex-row gap-1 items-center text-sm text-red-500">
+      <i class="fa-solid fa-heart text-xl"></i>
+      <span>{{ data!.like_count | number}}</span>
+    </div>
+    <div class="flex flex-row gap-1 items-center text-sm text-slate-500">
+      <i class="fa-solid fa-message text-lg"></i>
+      <span>{{ data!.comment_count | number}}</span>
+    </div>
+    <div class="flex flex-row gap-1 items-center text-sm text-slate-500 flex-1 justify-end">
+      <i class="fa-solid fa-eye text-lg"></i>
+      <span>{{ data!.view_count | number}}</span>
+    </div>
+  </div>
+  <hr>
+  <div class="flex flex-col gap-4">
+    <ng-container *ngFor="let cmt of data!.recent_comments">
+      <div class="flex flex-row gap-2">
+        <img src="/assets/images/resources/user.png" alt="" class="h-10 w-10 rounded-full">
+        <div class="flex flex-col">
+          <div class="flex flex-row gap-2">
+            <span class="text-sm">{{ cmt.name }}</span>
+            <span class="text-xs text-slate-400"><i class="fa-solid fa-clock"></i> 2 min ago</span>
+          </div>
+          <span class="text-xs">{{ cmt.message }}</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="flex flex-row bg-slate-100 rounded justify-between">
+    <img src="/assets/images/resources/user.png" alt="" class="h-10 w-10 rounded-l">
+    <input type="text" class="flex-1 focus:outline-none focus:ring-0 text-xs bg-transparent placeholder:text-slate-400 placeholder:text-xs py-2 px-3" placeholder="Add your comment..">
+    <button class="bg-red-500 py-2 px-3 rounded-r text-sm text-slate-100">Send</button>
+  </div>
+</div>

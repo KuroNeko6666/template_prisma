@@ -1,0 +1,16 @@
+<div class="flex flex-col">
+
+  <ng-container *ngFor="let item of data">
+    <div class="flex flex-row gap-3 text-sm items-center hover:bg-slate-100 cursor-pointer py-3 px-4" (click)="viewEmit(item.id!)">
+      <span class=""><img [src]="item.avatar" alt="" class="rounded-full w-10"></span>
+      <span class="flex-1 flex flex-col">
+        <span class="font-bold text-slate-800">{{ item.name }}</span>
+        <span class=" text-slate-400 text-xs">{{ item.job }}</span>
+      </span>
+      <button class="flex flex-row gap-2 justify-end font-bold" (click)="followEmit(item.id!, $event)">
+        <i class="fa-solid fa-user-plus mx-auto hover:text-red-500"></i>
+      </button>
+    </div>
+  </ng-container>
+
+</div>

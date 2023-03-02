@@ -28,7 +28,7 @@
               (click)="item.children.length == 0 ? navigateTo(item.path) : null">
               <span class="mx-auto px-3"><img [src]="item.icon" alt=""></span>
               <span class="mx-auto px-3">{{ item.name }}</span>
-              <div class="w-fit flex flex-col absolute z-10 top-0 mt-16 lg:mt-14 bg-red-400 rounded-b">
+              <div class="w-fit flex flex-col absolute z-30 top-0 mt-16 lg:mt-14 bg-red-400 rounded-b">
                 <ng-container *ngIf="!item.collapse">
                   <ng-container *ngFor="let subitem of item.children">
                     <div class="px-5 py-3 hover:bg-red-500 rounded-b" (click)="navigateTo(subitem.path)"
@@ -50,7 +50,7 @@
                 <!-- <span class="mx-auto">1</span> -->
               </div>
             </div>
-            <div class="absolute top-0 md:mt-16 lg:mt-14 bg-white shadow text-slate-800 rounded w-fit flex flex-col"
+            <div class="absolute z-30 top-0 md:mt-16 lg:mt-14 bg-white shadow text-slate-800 rounded w-fit flex flex-col"
               *ngIf="Messages">
               <div class="px-5 py-3 border-b text-slate-500 flex flex-row">
                 <span class="font-bold text-xs text-start flex-1">Setting</span>
@@ -94,7 +94,7 @@
                 <!-- <span class="mx-auto">1</span> -->
               </div>
             </div>
-            <div class="absolute top-0 md:mt-16 lg:mt-14 bg-white shadow text-slate-800 rounded w-fit flex flex-col"
+            <div class="absolute z-30 top-0 md:mt-16 lg:mt-14 bg-white shadow text-slate-800 rounded w-fit flex flex-col"
               *ngIf="Notifications">
               <div class="px-5 py-3 border-b text-slate-500 flex flex-row">
                 <span class="font-bold text-xs text-start flex-1">Setting</span>
@@ -149,7 +149,7 @@
           </div>
           <ng-container *ngIf="!menuProfile.collapse">
             <div
-              class="absolute top-0 left-0 md:left-auto md:right-0 z-10 mt-40 md:mt-20 lg:mt-14 rounded bg-white shadow text-slate-800">
+              class="absolute top-0 left-0 md:left-auto md:right-0 z-30 mt-40 md:mt-20 lg:mt-14 rounded bg-white shadow text-slate-800">
               <div class="flex flex-col">
                 <div class="px-5 py-3 border-b">
                   <span class="font-bold">Online Status</span>
@@ -202,7 +202,7 @@
   </div>
 </div>
 
-<div class="absolute z-10 top-0 left-0 lg:hidden" *ngIf="sideBar">
+<div class="absolute z-30 top-0 left-0 lg:hidden" *ngIf="sideBar">
   <div class="bg-red-500 w-44 h-screen py-5 rounded shadow">
     <div class="flex-col justify-end lg:flex">
       <ng-container *ngFor="let item of headerMenu; let i = index">
@@ -212,7 +212,7 @@
           (click)="item.children.length == 0 ? navigateTo(item.path) : null">
           <span class="py-2 px-3"><img [src]="item.icon" alt=""></span>
           <span class="py-2 px-3">{{ item.name }}</span>
-          <div class="flex flex-col absolute z-10 top-0 left-0 ml-44 bg-red-400 rounded-r">
+          <div class="flex flex-col absolute z-30 top-0 left-0 ml-44 bg-red-400 rounded-r">
             <ng-container *ngIf="!item.collapse">
               <ng-container *ngFor="let subitem of item.children">
                 <div class="px-5 py-3 hover:bg-red-500 rounded-b" (click)="navigateTo(subitem.path)">

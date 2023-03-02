@@ -1,0 +1,10 @@
+<div class=" bg-white shadow rounded h-fit">
+  <div class="px-4 py-5 flex flex-row justify-between gap-4">
+    <span class="font-bold">{{ title }}</span>
+    <i class="fa-solid fa-ellipsis-vertical my-auto"></i>
+  </div>
+  <hr>
+  <ng-content #list></ng-content>
+  <ng-content #footer></ng-content>
+
+</div>

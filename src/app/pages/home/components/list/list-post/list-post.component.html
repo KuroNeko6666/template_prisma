@@ -1,0 +1,13 @@
+<div class="flex flex-col gap-2 p-5">
+  <ng-container *ngFor="let item of data">
+    <div class="flex flex-row gap-3 text-sm items-center">
+      <span class="flex flex-col">
+        <span class="font-bold text-slate-800">{{ item.name }}</span>
+        <span class=" text-slate-400 text-xs">{{ item.caption | slice:0:50 }}</span>
+      </span>
+      <div class="flex-1 flex flex-row gap-2 justify-end font-bold text-xs" *ngIf="item.payment && item.payment_time">
+        <span class="text-bold">{{ item.payment + "/" + item.payment_time }}</span>
+      </div>
+    </div>
+  </ng-container>
+</div>
