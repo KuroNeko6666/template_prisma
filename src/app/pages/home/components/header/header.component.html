@@ -81,7 +81,7 @@
                 </div>
               </div>
               <div class="text-slate-100 text-center bg-red-500 py-4 px-auto hover:bg-red-600">
-                <span class="font-bold text-sm">View all Messages</span>
+                <button class="font-bold text-sm" (click)="navigateTo('messages', $event)">View all Messages</button>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@
                 </div>
               </div>
               <div class="text-slate-100 text-center bg-red-500 py-4 px-auto hover:bg-red-600">
-                <span class="font-bold text-sm">View all Messages</span>
+                <button class="font-bold text-sm" (click)="navigateTo('messages', $event)">View all Notification</button>
               </div>
             </div>
           </div>

@@ -17,6 +17,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ActivitiesComponent } from './activities/activities.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { MessagesComponent } from './messages/messages.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { ActivitiesComponent } from './activities/activities.component';
     ProfileComponent,
     ProfilesComponent,
     JobsComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    NotificationsComponent,
+    MessagesComponent,
+    SettingsComponent
   ],
   imports: [
     CommonModule,

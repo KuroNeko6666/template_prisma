@@ -6,6 +6,7 @@ import { CompanyProfileComponent } from './company-profile/company-profile.compo
 import { HomeComponent } from './home.component';
 import { IndexComponent } from './index/index.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { MessagesComponent } from './messages/messages.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path: "jobs",
         component: JobsComponent
+      },
+      {
+        path: "messages",
+        component: MessagesComponent
       },
 
     ]

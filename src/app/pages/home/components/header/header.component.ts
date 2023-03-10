@@ -52,7 +52,10 @@ export class HeaderComponent {
     this.Notifications = !this.Notifications
   }
 
-  navigateTo(path: string): void{
+  navigateTo(path: string, event: Event | null = null): void{
+    if(event){
+      event.preventDefault()
+    }
     this.router.navigateByUrl(path).then((res) => {
       if(res){
         this.currentUrl = this.router.url
